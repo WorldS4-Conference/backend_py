@@ -9,7 +9,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.http import HttpResponse, JsonResponse
-from serializers import UploadedFileSerializer
+from api.serializers import UploadedFileSerializer
 from api.models import *
 
 @api_view(['POST'])

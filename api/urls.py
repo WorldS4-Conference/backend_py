@@ -22,11 +22,14 @@ from .views.upload_file import upload_file
 from .views.ping import ping
 from .views.login_view import login_view
 from .views.register_view import register_view
+from .views.download import download_file
+
 
 
 urlpatterns = [
     path('check_tags/', check_tags, name='check_tags'),
     path('upload/', upload_file, name='upload_file'),
+    path('download/', download_file, name='download_file'),
     path('ping/', ping, name='ping'),
     path('login/', login_view, name='login'),
     path('register/', register_view, name='register'),
