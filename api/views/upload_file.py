@@ -24,7 +24,7 @@ def upload_file(request):
 
         with open('storage/' + uploaded_file.name, 'wb') as f:
             f.write(file_content)
-            UploadedFile.objects.create(tag=tag, location=uploaded_file.name)
+            File.objects.create(tag=tag, location=uploaded_file.name)
 
     return HttpResponse("Hello, world!")
 

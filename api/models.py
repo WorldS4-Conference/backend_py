@@ -5,7 +5,7 @@ from django.db import models
 from django.db import models
 
 
-class UploadedFile(models.Model):
+class File(models.Model):
     location = models.CharField(max_length=255)
     tag = models.CharField(max_length=255)
     # age = models.IntegerField()

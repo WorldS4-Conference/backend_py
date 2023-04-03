@@ -14,6 +14,6 @@ def check_tags(request):
 
     # id_list = [1, 2, 3, 4]
 
-    existing_people = UploadedFile.objects.filter(tag__in=tags)
+    existing_people = File.objects.filter(tag__in=tags)
 
     return HttpResponse(existing_people.exists())
