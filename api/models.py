@@ -8,6 +8,7 @@ from django.db import models
 class File(models.Model):
     location = models.CharField(max_length=255)
     tag = models.CharField(max_length=255)
+    accessId = models.CharField(max_length=255, default="a")
     # age = models.IntegerField()
     # file = models.FileField(upload_to='uploads/')
 
