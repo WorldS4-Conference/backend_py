@@ -12,6 +12,7 @@ from django.http import HttpResponse, JsonResponse
 from api.serializers import UploadedFileSerializer
 from api.models import *
 
+
 @api_view(['POST'])
 def login_view(request):
 
@@ -26,9 +27,12 @@ def login_view(request):
 
         is_password_correct = check_password(password, user[0].password)
 
+        print(user[0].email)
+
         if is_password_correct:
-            return JsonResponse({'message': 'Login Successful'}, status=200)
+            return JsonResponse({'message': 'Login Successful', 'name': user[0].name, 'email': user[0].email}, status=200)
         else:
             return JsonResponse({'message': 'Password Incorrect'}, status=400)
     except Exception as e:
+        print(e.args[0])
         return JsonResponse({'message': 'Internal Server Error'}, status=500)

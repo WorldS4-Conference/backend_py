@@ -46,8 +46,7 @@ def upload_file(request):
     # Get the elliptic curve with the bilinear mapping feature needed.
     groupObj = PairingGroup('SS512')
     cpabe = CPabe09(groupObj)
-    (master_private_key, master_public_key) = cpabe.setup(
-        g1=g1, g2=g2, alpha=alpha, a=a)
+    (master_private_key, master_public_key) = cpabe.setup(g1=g1, g2=g2, alpha=alpha, a=a)
 
     try:
         tag = request.data.get('tag', None)
