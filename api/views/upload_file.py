@@ -10,6 +10,7 @@ from rest_framework.response import Response
 from django.http import HttpResponse, JsonResponse
 from api.models import *
 from api.views.utils import *
+from timeit import default_timer as timer
 
 
 from charm.toolbox.pairinggroup import PairingGroup, GT
@@ -41,6 +42,8 @@ def encrypt_and_store_file_key(groupObj, file_path, cpabe, master_public_key, po
 @api_view(['POST'])
 def upload_file(request):
     print("upload file")
+    
+    start_time = timer()
 
     # Initializing CPABE System
     # Get the elliptic curve with the bilinear mapping feature needed.
@@ -81,7 +84,9 @@ def upload_file(request):
             # file.location = uploaded_file.name
             # print(file)
             # file.save()
-
+        end_time = timer()
+        elapsed_time = end_time - start_time
+        print("CPABE = ", elapsed_time)
         return JsonResponse({"message": "File Uploaded Succesfully"}, status=200)
     except Exception as e:
         traceback.print_exc()  # Print the full traceback to the console

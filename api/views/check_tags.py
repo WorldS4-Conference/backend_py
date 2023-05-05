@@ -24,7 +24,7 @@ def check_tags(request):
 
     # if existing_file.exists() == False:
     # print(email)
-
+    print(tmp)
     print("Tags : ")
     print(tags)
 

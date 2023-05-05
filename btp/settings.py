@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME' : 'test1',
-        'USER' : 'root',
+        'USER' : 'admin',
         'PASSWORD':'password',
-        'HOST':'localhost',
+        'HOST':'database-2.c4mogjfnbtpq.ap-northeast-1.rds.amazonaws.com',
         'PORT': '3306'
         # 'OPTIONS': {
         #     'read_default_file': '/home/soham/my.cnf',
